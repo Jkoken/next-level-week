@@ -118,3 +118,50 @@ form button {
 form button:hover {
     background-color: #2fb86e;
 }
+
+.items-grid {
+    display: grid; /*Utilizado para criar linhas e colunas*/
+    grid-template-columns: 1fr 1fr 1fr; /*Ou usa-se os valores em pixels*/
+    gap: 16px; /*Semelhante ao margin, mas o gap é uma funcionalidade exclusiva do grid, que é uma maneira facilitada de inserir margens*/
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none;
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    height: 180px;
+
+    padding: 32px 24px 16px;
+
+    display: flex; /*Alinha lateralmente*/
+    flex-direction: column; /*muda a direção de lateralmente para verticalmente*/
+    align-items: center;
+    justify-content: space-between; /*criaria o espaço lateral, mas como a direção foi alterada, ele criou na vertical*/
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.items-grid li span {
+    margin-top: 12px;
+    flex: 1; /*Diz que vai pegar todo o espaço que sobra para ele*/
+    
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+
+}
+
+.items-grid li.selected {
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none; /*desabilita o "efeito" de click desses objetos*/
+}
